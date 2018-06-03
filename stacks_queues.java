@@ -8,10 +8,13 @@ class stacks_queues {
     //constructor that creates the stack 
     stacks_queues(int size){
         arraySize = size;
+        stackArray = new int[arraySize];
+
     }
 
     //push method that pushes an item
     public void push(int item){
+        stackTop++;
         stackArray[stackTop++] = item;
     }
 
@@ -24,6 +27,7 @@ class stacks_queues {
     //main method
     public static void main(String[] args){
         stacks_queues stackName = new stacks_queues(10); //private so you wont be able to access the array dirrectly
-        stackName.push(5);
+        stackName.push(10);
+        stackName.printArr();
     }
 }
