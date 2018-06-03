@@ -1,2 +1,2 @@
 # Data-Structure-Algorithms
-practice implementing various data structures and Algorithms
+Implamentation of various data structures and Algorithms
