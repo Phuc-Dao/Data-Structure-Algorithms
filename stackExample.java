@@ -1,28 +1,33 @@
 //simple stack implamentation
-class stacks_queues {
+class stackExample {
     //empty array that will represent our stack
     private int[] stackArray;
     private int arraySize;
-    //set to -1 so when you increase it by one then it becomes zero for the first index of the array
+    //set to -1 so when you increase it by one then it becomes zero for the first index of the array. when the stacktop is empty then 
     private int stackTop = -1;
-
-    //constructor that creates the stack 
-    stacks_queues(int size){
-        stackTop++;
+    
+    //This is the constructor
+    stackExample(int size){
         arraySize = size;
         stackArray = new int[arraySize];
 
     }
-
+    //How do you pop an element from an array
+    public int pop(){
+        stackTop--;
+        return stackArray[stackTop];
+    }
     //push method that pushes an item
     public void push(int item){
+        ++stackTop;
+        System.out.println("The top of the stack index is " + stackTop);
+        System.out.println("added " + item + " to the stack");
         //increments the top of the stack and then stores the value
         stackArray[stackTop] = item;
-        stackTop++;
     }
 
     public void printArr(){
-        for(int i =0; i < arraySize; i++){
+        for(int i =0; i <= stackTop; i++){
             System.out.println(stackArray[i]);
         }
     }
@@ -31,18 +36,11 @@ class stacks_queues {
         return stackArray[stackTop]; // returns a number
     }
 
-
-
     //checks if the stack is empty
     public boolean isEmpty(){
        if(stackTop == -1)
             return true;
         return false;
-    }
-
-    public stackArray[] pop(){
-        stackTop--;
-        return stackArray[stackTop];
     }
     
     //main method
@@ -51,10 +49,6 @@ class stacks_queues {
         stackName.push(10);
         stackName.push(25);
         stackName.push(34);
-        System.out.println(stackName.isEmpty());
-
-        stacks_queues testStack = new stacks_queues(5);
-        System.out.println(testStack.isEmpty());
-
+       stackName.printArr();
     }
 }
