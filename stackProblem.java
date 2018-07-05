@@ -7,6 +7,4 @@ class satckProblem{
         intStack.push(6);
         System.out.println(intStack.pop());
     }
-
-
 }
